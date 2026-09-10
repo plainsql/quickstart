@@ -1,0 +1,16 @@
+projects:
+  # A configuration can contain multiple named projects.
+  blog:
+    database:
+      # Read connection string from environment.
+      dsn: ${DATABASE_URL}
+    queries:
+      # Find .sql files recursively. Paths are relative to this configuration file.
+      - directory: queries
+        # Checks these queries are safe for a read-only connection.
+        mode: read
+    generate:
+      go:
+        package: dbgen
+        # Generation will replace this directory. Keep application code elsewhere.
+        directory: internal/dbgen
