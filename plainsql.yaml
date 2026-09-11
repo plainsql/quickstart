@@ -6,11 +6,11 @@ projects:
       dsn: ${DATABASE_URL}
     queries:
       # Find .sql files recursively. Paths are relative to this configuration file.
-      - directory: queries
+      - dir: queries
         # Checks these queries are safe for a read-only connection.
         mode: read
     generate:
       go:
         package: dbgen
         # Generation will replace this directory. Keep application code elsewhere.
-        directory: internal/dbgen
+        dir: internal/dbgen
