@@ -6,6 +6,8 @@ The runnable example for the [PlainSQL quickstart](https://plainsql.com/docs/qui
 
 Use Go 1.27 or newer. The public demo database accepts read-only connections.
 
+The `demo` password below is intentionally public. It is not a secret.
+
 ```sh
 git clone https://github.com/plainsql/quickstart.git
 cd quickstart
