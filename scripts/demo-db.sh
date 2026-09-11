@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Prepares a hosted PostgreSQL database as the public PlainSQL demo. Applies the
+# Prepares a hosted Postgres database as the public PlainSQL demo. Applies the
 # goose migrations, loads the sample users and posts, and creates a read-only
 # role that the docs publish. Safe to run more than once.
 #

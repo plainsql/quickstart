@@ -19,7 +19,12 @@ func main() {
 	}
 	defer pool.Close()
 
+	// New wraps the pool. Every generated query is a method on the result.
 	queries := dbgen.New(pool)
+
+	// ListRecentPosts is the method generated from queries/posts_read.sql.
+	// The 10 fills the $1 placeholder in LIMIT $1. Each post has typed Title,
+	// Author, and CreatedAt fields, so there is no manual row scanning.
 	posts, err := queries.ListRecentPosts(ctx, 10)
 	if err != nil {
 		log.Fatal(err)
